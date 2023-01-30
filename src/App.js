@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  BrowserRouter,
+} from "react-router-dom";
+import { useState, useEffect } from "react";
+import PreLoadBackground from "./component/PreLoadBackground/Pre_Load_Background.component";
+import Home from "./component/home/home.component";
+import Card from "./component/Card/Card.component";
+import NavBar from "./component/NavBar/NavBar_component";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [preLoader, setpreLoader] = useState(true);
+  //const [bk, setBK] = useState(PreLoadBackground)
+
+  // It will be executed before rendering
+
+  useEffect(() => {
+    setTimeout(() => setpreLoader(false), 1000);
+    //console.log(setpreLoader);
+  }, []);
+
+  if (preLoader === true) return <PreLoadBackground />;
+
+  // [] means like componentDidMount
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    !preLoader && (
+      <>
+        <Router>
+          <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <NavBar />
+                <Home />
+              </>
+            }
+          ></Route>
+          </Routes>
+        </Router>
+      </>
+    )
   );
-}
+};
+
+// function App() {
+//   return (
+//     <div>
+//       <Router>
+//         <Signup/>
+//       </Router>
+//     </div>
+//   );
+// }
 
 export default App;

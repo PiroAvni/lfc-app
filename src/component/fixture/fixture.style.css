@@ -1,0 +1,76 @@
+.fixture_container{
+    background: rgb(224, 221, 221);
+    border: solid rgb(224, 221, 221);
+    border-radius:10px ;
+    margin:auto ;
+    margin-top: 0.5rem;
+}
+.fixture-info{
+display: flex;
+flex-direction: row;
+gap:.5rem;
+margin: .2rem;
+
+}
+.fixture-info p{
+    color: rgb(93, 91, 91);
+}
+.fixture-type{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:2rem;
+}
+.fixture{
+    display:flex;
+    flex-direction: row;
+    padding:.5rem;
+    align-content: center;
+    gap:1rem;
+}
+.team-info{
+    display:flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-content: center;
+    margin:auto;
+    padding: 0 .5rem;
+}
+.team-info p{
+font-size: 1rem;
+color: rgb(2, 2, 2);
+margin:auto
+}
+.fixture-kickoff{
+    border: solid #fff;
+    border-radius:10px ;
+    background: #fff;
+    padding:.5rem 1rem;
+    margin:auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.fixture-kickoff p{
+    color: rgb(2, 2, 2);
+    margin: auto;
+    font-size: .66rem;
+    
+}
+.team-logo{
+    height: 100%;
+}
+img{
+    min-width: 2.5rem;
+    height: 4rem;
+    margin: auto;
+}
+.carousel-indicators [data-bs-target] {
+    background-color:rgb(93, 91, 91)!important ;
+}
+.carousel-indicators {
+    margin-bottom: -1rem!important;
+}
